@@ -38,6 +38,23 @@
 *	[output 6]: 0
 */
 
-int task03(int, int, int) {
-	return 0;
+int task03(int n1, int n2, int n3) {
+	if (n1 < 1 || n2 < 1 || n3 < 1) {
+		return 0;
+	}
+
+	int divisor = 1;
+	
+	int min = n1 > n2 ? n2 : n1;
+	min = min > n3 ? n3 : min;
+	
+	for (int i = min; i >= 2; i--)
+	{
+		if (n1 % i == 0 && n2 % i == 0 && n3 % i == 0) {
+			divisor = i;
+			break;
+		}
+	}
+	
+	return divisor;
 }
