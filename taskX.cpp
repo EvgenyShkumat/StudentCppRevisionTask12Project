@@ -28,5 +28,20 @@
 */
 
 bool taskX(long long number) {
+	while (number != 0) {
+		int digit = number % 10;
+		int n_copy = number / 10;
+
+		while (n_copy != 0) {
+			if (n_copy % 10 == digit) {
+				return true;
+			}
+
+			n_copy /= 10;
+		}
+
+		number /= 10;
+	}
+
 	return false;
 }
