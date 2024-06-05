@@ -36,6 +36,25 @@
 *	[output 6]: 0
 */
 
-int task04(int, int, int) {
+int task04(int n1, int n2, int n3) {
+	if (n1 < 1 || n2 < 1 || n3 < 1) {
+		return 0;
+	}
+
+	int divisor;
+
+	int max = n1 < n2 ? n2 : n1;
+	max = max < n3 ? n3 : max;
+
+	for (int i = max; i <= n1 * n2 * n3; i++)
+	{
+		if (i % n1 == 0 && i % n2 == 0 && i % n3 == 0) {
+			divisor = i;
+			break;
+		}
+	}
+
+	return divisor;
+	
 	return 0;
 }
