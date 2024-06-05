@@ -35,6 +35,20 @@
 *	[output 6]: 0
 */
 
-int task02(int, int) {
-	return 0;
+int task02(int n1, int n2) {
+	if (n1 < 1 || n2 < 1) {
+		return 0;
+	}
+
+	int divisor = n2 * n1;
+
+	for (int i = (n2 > n1 ? n2 : n1); i < n2 * n1; i++)
+	{
+		if (i % n2 == 0 && i % n1 == 0) {
+			divisor = i;
+			break;
+		}
+	}
+
+	return divisor;
 }
